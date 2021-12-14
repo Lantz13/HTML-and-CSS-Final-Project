@@ -1,0 +1,351 @@
+@charset "utf-8";
+    
+* {
+      box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+    padding:0;
+}
+   .container {
+    height:100vh;
+    display: grid;
+    grid-template-columns:fr1;
+    grid-auto-rows: repeat(auto-fit, minmax(200px, auto));
+    grid-template-areas: 
+        "header"
+        "aside"
+        "main"
+        "footer";
+       
+}
+
+nav {
+    grid-area: nav;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+}
+
+header{
+    grid-area: header;
+    
+}
+
+main {
+    grid-area: main;
+    padding:0 100px 10px 100px
+}
+
+aside {
+    grid-area: aside;
+    margin:40px 0 0 100px;;
+}
+
+footer {
+    grid-area: footer;
+    width:100%;
+    background-color:#B6867F;
+    display: flex;
+    justify-content:center;
+    flex-wrap: wrap;
+}
+
+    .sidenav {
+        height:100%;
+        width:0;
+        position:fixed;
+        z-index:1;
+        top:0;
+        left:0;
+        background-color:#111;
+        overflow-x:hidden;
+        transition:0.5s;
+        padding-top:60px;
+    }
+    .sidenav a {
+        padding:8px 8px 8px 32px;
+        text-decoration: none;
+        font-size:25px;
+        color:white;
+        display:block;
+        transition:0.3s;
+    }
+    .sidenav a:hover {
+        color:#B6867F;
+    }
+    .sidenav .closebtn {
+        position:absolute;
+        top:0;
+        right:25px;
+        font-size:36px;
+        margin-left:50px;
+    }
+
+    #main {
+    transition:margin-left .5s;
+    }
+
+    @media screen and (max-width:935px) {
+        .sidenav {padding-top:15px;}
+        .sidenav a {font-size: 1.1em;}
+    }
+    @media screen and (max-width:633px) {
+        .sidenav {padding-top:15px;}
+        .sidenav a {font-size: .8em;}
+        .sidenav a {text-align: center;}
+    }
+
+
+section {
+    margin:0;
+    width:100%;
+}
+
+h1 {
+    font-size: 3em;
+    color: #B6867F;
+    font-family: 'Amatic SC', cursive;
+    letter-spacing: 3px;
+    word-spacing: 7px;
+    animation-duration: 3s;
+    animation-name: slidein;
+    margin: 0;
+}
+
+@media screen and (max-width:430px) {
+    h1 {font-size: 2em;}    
+}
+
+.imgBannerBottomLeft {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+  background-color:#B6867F;
+  width: 55%;
+    display: flex;
+  align-self: flex-start;    
+}
+
+.imgBanner {
+    position: relative;
+    text-align: center;
+    color: #D9D9D9;
+    font-weight: 900;
+}
+
+figcaption {
+    font-size: 2em;
+    letter-spacing: 12px;
+    text-shadow: 3px 5px #302F2E;
+}
+
+@media screen and (max-width:1160px) {
+    figcaption {
+        font-size: 1.5em;
+        text-shadow: 3px 5px #302F2E;
+        }
+    
+}
+
+@media screen and (max-width:954px) {
+    figcaption {
+        display: none;
+        }
+    
+}
+
+p {
+    font-size: 1.5em;
+}
+
+@keyframes slidein {
+from {  margin-left:100%;
+    width: 300%; }
+to {  margin-left: 0%;
+    width: 100%; }
+}
+
+.icon-bar { 
+    align-self: center;
+    justify-content: center;
+    width:75%;
+    display:flex;
+    flex-direction: row;
+    
+}
+
+.icon-bar a {
+    text-align: center;
+    width:25%;
+    padding: 12px 0; 
+    transition: all 0.3s ease; 
+    color: white; 
+    font-size: 30px;
+}
+
+.icon-bar a:hover {
+    background-color: #403F3E;
+}
+
+.contactLink {
+    font-size:1.1em;
+    font-weight: 800;
+    color: white;
+    display: flex;
+    align-self: center;
+}
+h2 {
+    font-size: 2em;
+    color: #B6867F;
+    font-family:Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+    letter-spacing: 3px;
+    word-spacing: 7px;
+    padding-left: 10px;
+    
+}
+
+section {
+    padding-left: 10px;
+}
+
+#classContainer {
+    width:100%;
+    justify-content:  center;
+    background-color:#403F3E;
+    border-radius: 20px;
+    display: grid;
+    padding: 10px;
+    grid-gap: 20px;    
+    grid-template-columns:repeat(auto-fit, minmax(100px, 450px));
+
+}
+
+.classes {
+    display: flex;
+    flex-direction: column;
+    margin:10px 0 10px 0;
+    background-color:#A09D9D; 
+    border-radius: 20px;
+    padding:3px;
+}
+
+#gym {
+    width: 100%;
+}
+
+.welcome {
+    padding-left: 10px;
+}
+
+#title {
+    padding-left: 20px;
+}
+
+h3 {
+    align-self:flex-start;
+    font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", "serif";
+    font-size: 1.2em;
+    color:white;
+    text-transform: uppercase;
+    text-shadow: 3px 3px #302F2E;
+}
+
+main {
+    margin-right: 15px;
+}
+
+h6 {
+    align-self:stretch;
+    font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", "serif";
+    font-size: 1em;
+    color:white;
+}
+
+
+section {
+    margin-top: 150px;
+}
+
+#membershipSection {
+    width:100%;
+    padding: 10px;
+    background-color:#403F3E;
+    border-radius: 20px;
+    display: flex;   
+    flex-direction: column;
+    align-items:center;
+    
+}
+
+#imgFacility {
+    width:98%;
+    
+}
+
+th {
+    font-size: 1.1em;
+    float: left;
+    font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", "serif";
+    color:white;
+    text-transform: uppercase;
+    text-shadow: 3px 3px #484645;
+}
+
+td {
+    font-size: 1.2em;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+    
+}
+
+
+
+
+.imgWorkout {
+    width:100%;
+}
+
+table {
+    background-color: white;
+}
+
+h4 {
+    font-size: 1.3em;
+    color:white;
+    padding:3px;
+    text-align: center;
+}
+
+#tablesContainer {
+    display: grid;
+    width: 100%;
+    align-content: center;
+    justify-content: center;
+    grid-gap: 20px;
+    grid-template-columns:repeat(auto-fit, 250px);;
+}
+
+.memberships {
+    display: flex;
+    flex-direction: column;
+    margin:10px 0 10px 0;
+    background-color:#A09D9D; 
+    border-radius: 20px;
+    padding:3px;
+}
+
+.contactContainer {
+    width:100%;
+    background-color:#403F3E;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    display: grid;
+    justify-content:center;
+    grid-row-gap: 10px;    
+    grid-template-rows:repeat(auto-fit, minmax(300px, fr1));
+}
+
